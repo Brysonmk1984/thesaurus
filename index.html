@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>QUICKesaurus</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<style>
+		#title{
+			text-align:center;
+			margin:0px 0px 25px 0px;
+		}
+		#wrapper{
+			padding:20px;
+		}
+		#wordContainer, #errorContainer{
+			margin-top:20px;
+			padding:20px 30px;
+			border:solid 1px #ccc;
+			border-radius:4px;
+			min-height:20px;
+			overflow:hidden;
+		}
+		#errorContainer{
+			font-weight:bold;
+		}
+		.hide{
+			display:none;
+		}
+		.synonym{
+			display:inline-block;
+			padding:0px 10px;
+		}
+		footer{
+			margin-top:100px;
+			text-align:center;
+			height: 300px;
+			width: 100%;
+			z-index: 1000;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<h1 id="title"><span class="text-muted">Quick</span>esaurus</h1>
+		<form onsubmit="event.preventDefault();">
+			<div class="input-group">
+				<input id="word" class="form-control" type="text" placeholder="Enter a word" />
+				<span class="input-group-btn">
+					<button type="button" class="btn btn-default" onclick="NGA.fetch.request()" >Submit</button>
+				</span>
+			</div>
+		</form>
+		<div id="wordContainer" class="hide"></div>
+		<div id="errorContainer" class="hide text-warning">There was an error with your query...</div>
+	</div>
+	<footer>
+		<div id="footerText">
+			<strong>App by <a href="http://brysonkruk.com">Bryson Kruk</a></strong>
+			<br>© 2017 Bryson Kruk Design &amp; Development
+		</div>
+	</footer>
+	<script src="script.js" type="text/javascript"></script>
+</body>
+</html>
